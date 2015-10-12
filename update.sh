@@ -9,4 +9,6 @@ if [ ! -f ~/.zshrc ]; then
 	ln -s ~/.files/.zshrc ~/;
 fi;
 
+source ~/.zshrc;
+
 echo "Done.";
