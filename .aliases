@@ -79,3 +79,6 @@ alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resource
 
 # Open in Chrome
 alias chrome="open -a \"Google Chrome\""
+
+# Artisan
+alias a="php artisan"
