@@ -80,5 +80,9 @@ alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resource
 # Open in Chrome
 alias chrome="open -a \"Google Chrome\""
 
+<<<<<<< HEAD
 # Laravel CLI
+=======
+# Artisan
+>>>>>>> 4dd9fc405adc567a1fdf092addcadffecb1ce77d
 alias a="php artisan"
