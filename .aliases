@@ -84,5 +84,4 @@ alias chrome="open -a \"Google Chrome\""
 # Laravel CLI
 =======
 # Artisan
->>>>>>> 4dd9fc405adc567a1fdf092addcadffecb1ce77d
 alias a="php artisan"
