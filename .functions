@@ -141,3 +141,13 @@ function h {
 	local p="$(python -c 'import os; print os.path.relpath(os.getcwd(), os.path.expanduser("~"))')";
 	ssh vagrant@127.0.0.1 -p 2222 -t -q "source /etc/profile; source ~/.profile; cd ~/$p; $@";
 }
+
+# Run a command multiple times
+# Usage: `run <times> <command>`
+run() {
+	number=$1
+	shift
+	for i in `seq $number`; do
+		$@
+	done
+}
