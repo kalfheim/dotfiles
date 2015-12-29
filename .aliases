@@ -80,8 +80,7 @@ alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resource
 # Open in Chrome
 alias chrome="open -a \"Google Chrome\""
 
-# Laravel CLI
-# Artisan
+# Laravel Artisan CLI
 alias a="php artisan"
 
 # Accessing Homestead globally
@@ -89,3 +88,6 @@ alias homestead='function __homestead() { (cd ~/.composer/vendor/laravel/homeste
 
 # Edit Homestead.yaml
 alias homestead_edit="subl ~/.homestead/Homestead.yaml"
+
+# Useful for downloading big files
+alias curl_resumable="curl -L -O -C - "
