@@ -139,7 +139,7 @@ function getcertnames() {
 # Run commands on Homestead machine without ssh'ing into it
 function h {
 	local p="$(python -c 'import os; print os.path.relpath(os.getcwd(), os.path.expanduser("~"))')";
-	ssh vagrant@127.0.0.1 -p 2222 -t -q "source /etc/profile; source ~/.profile; cd ~/$p; $@";
+	ssh vagrant@192.168.10.10 -t -q "source /etc/profile; source ~/.profile; cd ~/$p; $@";
 }
 
 # Run a command multiple times
