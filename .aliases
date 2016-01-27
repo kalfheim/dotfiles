@@ -91,3 +91,6 @@ alias homestead_edit="subl ~/.homestead/Homestead.yaml"
 
 # Useful for downloading big files
 alias curl_resumable="curl -L -O -C - "
+
+# Composer alias
+alias c="composer"
