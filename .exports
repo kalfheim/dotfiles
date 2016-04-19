@@ -17,5 +17,7 @@ export MANPAGER='less -X';
 # Always enable colored `grep` output.
 export GREP_OPTIONS='--color=auto';
 
-# php70 homebrew
+# PHP via Homebrew
+# https://github.com/Homebrew/homebrew-php
+#export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
 export PATH="$(brew --prefix homebrew/php/php70)/bin:$PATH"
