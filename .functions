@@ -152,9 +152,9 @@ run() {
 	done
 }
 
-#
-mount_tek() {
-	local volumePath="/Volumes/$(whoami)_tek";
+# Wank stuff
+wank_mount() {
+	local volumePath="/Volumes/$(whoami)_creeper";
 
 	if [[ -e "$volumePath" ]]; then
 		echo "Probably already mounted.";
@@ -162,5 +162,34 @@ mount_tek() {
 	fi;
 
 	mkdir "$volumePath";
-	sshfs "$(whoami)@login.tek.no:/nfs/home/$(whoami)" "$volumePath" "-oping_diskarb,volname=$(whoami)_tek"
+	sshfs "$(whoami)@wank.hw.no:/nfs/home/$(whoami)" "$volumePath" "-oping_diskarb,volname=$(whoami)_creeper"
+}
+
+wank_unmount() {
+	creeper_unmount;
+}
+
+wank() {
+	ssh -A wank.hw.no
+}
+
+# Creeper stuff
+creeper() {
+	ssh -A creeper.hw.no
+}
+
+creeper_mount() {
+	local volumePath="/Volumes/$(whoami)_creeper";
+
+	if [[ -e "$volumePath" ]]; then
+		echo "Probably already mounted.";
+		return 1;
+	fi;
+
+	mkdir "$volumePath";
+	sshfs "$(whoami)@creeper.hw.no:/nfs/home/$(whoami)" "$volumePath" "-oping_diskarb,volname=$(whoami)_creeper"
+}
+
+creeper_unmount() {
+	diskutil unmount "/Volumes/$(whoami)_creeper";
 }
