@@ -151,3 +151,16 @@ run() {
 		$@
 	done
 }
+
+#
+mount_tek() {
+	local volumePath="/Volumes/$(whoami)_tek";
+
+	if [[ -e "$volumePath" ]]; then
+		echo "Probably already mounted.";
+		return 1;
+	fi;
+
+	mkdir "$volumePath";
+	sshfs "$(whoami)@login.tek.no:/nfs/home/$(whoami)" "$volumePath" "-oping_diskarb,volname=$(whoami)_tek"
+}
