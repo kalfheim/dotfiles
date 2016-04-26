@@ -69,10 +69,15 @@ prompt_end() {
 # Context: user@hostname (who am I and where am I)
 prompt_context() {
 	local user=`whoami`
+	local icon="✝"
 
-	if [[ "$user" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
-		prompt_segment black default "%(!.%{%F{yellow}%}.)✝"
+	if [[ $SSH_CLIENT == "creeper*" ]]; then
+		icon="👻"
+	elif [[ $SSH_CLIENT == "wank*" ]]; then
+		icon="🍆"
 	fi
+
+	prompt_segment black default "%(!.%{%F{yellow}%}.)$icon"
 }
 
 # Git: branch/detached head, dirty status
