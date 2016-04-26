@@ -69,11 +69,12 @@ prompt_end() {
 # Context: user@hostname (who am I and where am I)
 prompt_context() {
 	local user=`whoami`
+	local hostn=`hostname`
 	local icon="✝"
 
-	if [[ $SSH_CLIENT == "creeper*" ]]; then
+	if [[ $hostn == "creeper*" ]]; then
 		icon="👻"
-	elif [[ $SSH_CLIENT == "wank*" ]]; then
+	elif [[ $hostn == "wank*" ]]; then
 		icon="🍆"
 	fi
 
