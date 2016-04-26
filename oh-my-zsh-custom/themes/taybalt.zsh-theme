@@ -69,13 +69,12 @@ prompt_end() {
 # Context: user@hostname (who am I and where am I)
 prompt_context() {
 	local user=`whoami`
-	local hostn=`hostname`
 	local icon="✝"
 
-	if [[ $hostn == "creeper*" ]]; then
-		icon="👻"
-	elif [[ $hostn == "wank*" ]]; then
-		icon="🍆"
+	if [[ $(hostname) == creeper* ]]; then
+		icon="👻 "
+	elif [[ $(hostname) == wank* ]]; then
+		icon="🍆 "
 	fi
 
 	prompt_segment black default "%(!.%{%F{yellow}%}.)$icon"
