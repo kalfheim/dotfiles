@@ -193,3 +193,11 @@ creeper_mount() {
 creeper_unmount() {
 	diskutil unmount "/Volumes/$(whoami)_creeper";
 }
+
+# Retry command until success
+retry() {
+	until "$@";
+	do
+		sleep 1;
+	done;
+}
