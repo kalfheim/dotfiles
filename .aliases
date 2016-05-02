@@ -94,3 +94,6 @@ alias curl_resumable="curl -L -O -C - "
 
 # Composer alias
 alias c="composer"
+
+#
+alias hulksmash="rm -fr"
