@@ -201,3 +201,8 @@ retry() {
 		sleep 1;
 	done;
 }
+
+# A
+alpha() {
+	ssh -A 46.101.237.41
+}
