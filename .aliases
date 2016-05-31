@@ -83,6 +83,9 @@ alias chrome="open -a \"Google Chrome\""
 # Laravel Artisan CLI
 alias a="php artisan"
 
+# Laravel Valet
+alias v="valet"
+
 # Accessing Homestead globally
 alias homestead='function __homestead() { (cd ~/.composer/vendor/laravel/homestead && vagrant $*); unset -f __homestead; }; __homestead'
 
