@@ -100,3 +100,6 @@ alias c="composer"
 
 #
 alias hulksmash="rm -fr"
+
+# Why not
+alias putin="command sudo"
