@@ -162,7 +162,7 @@ wank_mount() {
 	fi;
 
 	mkdir "$volumePath";
-	sshfs "$(whoami)@wank.hw.no:/nfs/home/$(whoami)" "$volumePath" "-oping_diskarb,volname=$(whoami)_creeper"
+	sshfs "$(whoami)@wank.no:/nfs/home/$(whoami)" "$volumePath" "-oping_diskarb,volname=$(whoami)_creeper"
 }
 
 wank_unmount() {
@@ -170,12 +170,12 @@ wank_unmount() {
 }
 
 wank() {
-	ssh -A wank.hw.no
+	ssh -A wank.no
 }
 
 # Creeper stuff
 creeper() {
-	ssh -A creeper.hw.no
+	ssh -A creeper.no
 }
 
 creeper_mount() {
@@ -187,7 +187,7 @@ creeper_mount() {
 	fi;
 
 	mkdir "$volumePath";
-	sshfs "$(whoami)@creeper.hw.no:/nfs/home/$(whoami)" "$volumePath" "-oping_diskarb,volname=$(whoami)_creeper"
+	sshfs "$(whoami)@creeper.no:/nfs/home/$(whoami)" "$volumePath" "-oping_diskarb,volname=$(whoami)_creeper"
 }
 
 creeper_unmount() {
