@@ -154,7 +154,7 @@ run() {
 
 # Wank stuff
 wank_mount() {
-	local volumePath="/Volumes/$(whoami)_creeper";
+	local volumePath="$HOME/$(whoami)_creeper";
 
 	if [[ -e "$volumePath" ]]; then
 		echo "Probably already mounted.";
@@ -179,7 +179,7 @@ creeper() {
 }
 
 creeper_mount() {
-	local volumePath="/Volumes/$(whoami)_creeper";
+	local volumePath="$HOME/$(whoami)_creeper";
 
 	if [[ -e "$volumePath" ]]; then
 		echo "Probably already mounted.";
@@ -191,7 +191,8 @@ creeper_mount() {
 }
 
 creeper_unmount() {
-	diskutil unmount "/Volumes/$(whoami)_creeper";
+	diskutil unmount "$HOME/$(whoami)_creeper";
+	rmdir "$HOME/$(whoami)_creeper";
 }
 
 # Retry command until success
