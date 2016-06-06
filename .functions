@@ -154,7 +154,7 @@ run() {
 
 # Wank stuff
 wank_mount() {
-	local volumePath="$HOME/$(whoami)_creeper";
+	local volumePath="$HOME/creeper";
 
 	if [[ -e "$volumePath" ]]; then
 		echo "Probably already mounted.";
@@ -162,7 +162,7 @@ wank_mount() {
 	fi;
 
 	mkdir "$volumePath";
-	sshfs "$(whoami)@wank.no:/nfs/home/$(whoami)" "$volumePath" "-oping_diskarb,volname=$(whoami)_creeper"
+	sshfs "$(whoami)@wank.no:/nfs/home/$(whoami)" "$volumePath" "-oping_diskarb,volname=creeper"
 }
 
 wank_unmount() {
@@ -179,7 +179,7 @@ creeper() {
 }
 
 creeper_mount() {
-	local volumePath="$HOME/$(whoami)_creeper";
+	local volumePath="$HOME/creeper";
 
 	if [[ -e "$volumePath" ]]; then
 		echo "Probably already mounted.";
@@ -187,12 +187,12 @@ creeper_mount() {
 	fi;
 
 	mkdir "$volumePath";
-	sshfs "$(whoami)@creeper.no:/nfs/home/$(whoami)" "$volumePath" "-oping_diskarb,volname=$(whoami)_creeper"
+	sshfs "$(whoami)@creeper.no:/nfs/home/$(whoami)" "$volumePath" "-oping_diskarb,volname=creeper"
 }
 
 creeper_unmount() {
-	diskutil unmount "$HOME/$(whoami)_creeper";
-	rmdir "$HOME/$(whoami)_creeper";
+	diskutil unmount "$HOME/creeper";
+	rmdir "$HOME/creeper";
 }
 
 # Retry command until success
