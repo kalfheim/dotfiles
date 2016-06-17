@@ -191,8 +191,7 @@ creeper_mount() {
 }
 
 creeper_unmount() {
-	diskutil unmount "$HOME/creeper";
-	rmdir "$HOME/creeper";
+	diskutil unmount "$HOME/creeper" && rmdir "$HOME/creeper";
 }
 
 # Retry command until success

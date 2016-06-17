@@ -1,0 +1,6 @@
+#!/usr/bin/env php
+<?php
+
+$lorizzle = file_get_contents('http://lorizzle.nl/?feed=1');
+$ipsizzle = substr($lorizzle, strpos($lorizzle, '<div class="lipsum"><p>') + 23);
+echo substr($ipsizzle, 0, strpos($ipsizzle, '</p>')).PHP_EOL;
