@@ -1,5 +1,5 @@
 # Paths
-export PATH="$HOME/.files/bin:$HOME/.composer/vendor/bin:/usr/local/git/bin:$PATH"
+export PATH="$HOME/.files/bin:$HOME/.composer/vendor/bin:/usr/local/git/bin:$PATH:$HOME/adm/bin"
 
 # Make nano the default editor.
 export EDITOR='nano';
