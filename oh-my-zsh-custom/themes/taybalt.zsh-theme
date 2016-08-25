@@ -73,7 +73,7 @@ prompt_context() {
 
 	if [[ $(hostname) == creeper* ]]; then
 		icon="👻 "
-	elif [[ $(hostname) == wank* ]]; then
+	elif [[ $(hostname) == golan* ]]; then
 		icon="🍆 "
 	fi
 

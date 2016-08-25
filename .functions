@@ -194,6 +194,16 @@ creeper_unmount() {
 	diskutil unmount "$HOME/creeper" && rmdir "$HOME/creeper";
 }
 
+# hal9000
+hal() {
+	ssh -A ssh.tu.c.bitbit.net
+}
+
+# golan
+golan() {
+	ssh -A golan.tu.c.bitbit.net
+}
+
 # Retry command until success
 retry() {
 	until "$@";
