@@ -1,8 +1,8 @@
 # Paths
 export PATH="$HOME/.files/bin:$HOME/.composer/vendor/bin:/usr/local/git/bin:$HOME/adm/bin:$HOME/bin:$PATH"
 
-# Make nano the default editor.
-export EDITOR='nano';
+# Make vim the default editor.
+export EDITOR='vim';
 
 # Prefer US English and use UTF-8.
 export LANG='en_US.UTF-8';
