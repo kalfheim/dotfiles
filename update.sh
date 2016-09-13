@@ -6,12 +6,16 @@ cd ~/.files;
 git pull origin master;
 
 if [ ! -L ~/.zshrc ]; then
-	if [ -f ~/.zshrc ]; then
-		rm ~/.zshrc;
-	fi;
-
 	echo "Symlink ~/.zshrc -> ~/.files/.zshrc";
 	ln -s ~/.files/.zshrc ~/;
+fi;
+
+if [ ! -L ~/.vimrc ]; then
+	echo "Symlink ~/.vimrc -> ~/.files/.vimrc";
+	ln -s ~/.files/.vimrc ~/;
+
+	echo "Symlink ~/.vim -> ~/.files/vim";
+	ln -s ~/.files/vim ~/.vim;
 fi;
 
 source ~/.zshrc;
