@@ -2,7 +2,7 @@ set nocompatible
 
 syntax enable
 set backspace=indent,eol,start
-let mapleader = ','
+let mapleader = "\<Space>"
 set number
 
 colorscheme atom-dark-256
