@@ -4,6 +4,4 @@
 
 ## fish shell & fisherman
 
-https://github.com/fisherman/fisherman#install
-
 Run `fisher` probably is good idea yes

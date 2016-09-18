@@ -18,10 +18,10 @@ if [ ! -L ~/.vimrc ]; then
 	ln -s ~/.files/vim ~/.vim;
 fi;
 
-if [ -d ~/.config/fish ]; then
-	rm -fr ~/.config/fish/*; # fukit
-
+if [ ! -d ~/.config/fish ]; then
 	echo "Symlinking fish";
+
+	mkdir ~/.config/fish;
 
 	ln -s ~/.files/fish/fishfile ~/.config/fish;
 	ln -s ~/.files/fish/config.fish ~/.config/fish;
