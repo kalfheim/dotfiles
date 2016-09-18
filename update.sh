@@ -18,7 +18,7 @@ if [ ! -L ~/.vimrc ]; then
 	ln -s ~/.files/vim ~/.vim;
 fi;
 
-if [ -d ~/.config/fish]; then
+if [ -d ~/.config/fish ]; then
 	rm -fr ~/.config/fish/*; # fukit
 
 	echo "Symlinking fish";
