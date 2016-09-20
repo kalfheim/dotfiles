@@ -7,3 +7,6 @@ alias v='valet'
 
 # Composer
 alias c='composer'
+
+# Enables .wav files
+alias say='say --data-format=LEF32@8000'
