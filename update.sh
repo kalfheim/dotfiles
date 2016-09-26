@@ -18,6 +18,11 @@ if [ ! -L ~/.vimrc ]; then
 	ln -s ~/.files/vim ~/.vim;
 fi;
 
+if [ ! -L ~/.gitconfig ]; then
+	echo "Symlink ~/.gitconfig -> ~/.files/.gitconfig";
+	ln -s ~/.files/.gitconfig ~/;
+fi;
+
 if [ ! -d ~/.config/fish ]; then
 	echo "Symlinking fish";
 
