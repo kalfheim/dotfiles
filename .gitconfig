@@ -3,3 +3,5 @@
 	email = kristoffer.alfh@gmail.com
 [alias]
 	s = status
+[color]
+	ui = true
