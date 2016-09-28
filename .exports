@@ -1,5 +1,5 @@
 # Paths
-export PATH="$HOME/.files/bin:$HOME/.composer/vendor/bin:/usr/local/git/bin:$HOME/adm/bin:$HOME/bin:$PATH"
+export PATH="$HOME/.files/bin:/usr/local/git/bin:$HOME/adm/bin:$HOME/bin:$PATH"
 
 # Make vim the default editor.
 export EDITOR='vim';
