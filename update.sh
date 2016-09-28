@@ -23,14 +23,14 @@ if [ ! -L ~/.gitconfig ]; then
 	ln -s ~/.files/.gitconfig ~/;
 fi;
 
-if [ ! -d ~/.config/fish ]; then
-	echo "Symlinking fish";
+# if [ ! -d ~/.config/fish ]; then
+# 	echo "Symlinking fish";
 
-	mkdir ~/.config/fish;
+# 	mkdir ~/.config/fish;
 
-	ln -s ~/.files/fish/fishfile ~/.config/fish;
-	ln -s ~/.files/fish/config.fish ~/.config/fish;
-fi;
+# 	ln -s ~/.files/fish/fishfile ~/.config/fish;
+# 	ln -s ~/.files/fish/config.fish ~/.config/fish;
+# fi;
 
 source ~/.zshrc;
 
