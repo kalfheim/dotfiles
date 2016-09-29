@@ -1,5 +1,8 @@
 # Paths
-export PATH="$HOME/.files/bin:/usr/local/git/bin:$HOME/adm/bin:$HOME/bin:$PATH"
+export PATH="/usr/local/sbin:$PATH:$PATH"
+export PATH="$HOME/.files/bin:$PATH"
+export PATH="$HOME/adm/bin:$PATH"
+export PATH="$HOME/bin:$PATH"
 
 # Make vim the default editor.
 export EDITOR='vim';
@@ -13,11 +16,3 @@ export LESS_TERMCAP_md="${yellow}";
 
 # Don’t clear the screen after quitting a manual page.
 export MANPAGER='less -X';
-
-# Always enable colored `grep` output.
-export GREP_OPTIONS='--color=auto';
-
-# PHP via Homebrew
-# https://github.com/Homebrew/homebrew-php
-#export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
-#export PATH="$(brew --prefix homebrew/php/php70)/bin:$PATH"
