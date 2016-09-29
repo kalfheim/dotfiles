@@ -34,15 +34,7 @@ wank_unmount() {
 	creeper_unmount;
 }
 
-wank() {
-	ssh -A wank.no
-}
-
 # Creeper stuff
-creeper() {
-	ssh -A creeper.no
-}
-
 creeper_mount() {
 	local volumePath="$HOME/creeper";
 
