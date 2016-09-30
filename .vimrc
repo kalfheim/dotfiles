@@ -6,6 +6,10 @@ so ~/.files/vim/plugins.vim
 set backspace=indent,eol,start
 let mapleader = "\<Space>"
 
+" Indentation stuff
+filetype plugin indent on
+set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
+
 "--------------------Styling--------------------
 
 syntax enable
