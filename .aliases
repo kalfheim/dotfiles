@@ -52,3 +52,6 @@ alias c="composer"
 
 #
 alias hulksmash="rm -fr"
+
+# Edit hosts file
+alias hosts='sudo $EDITOR /etc/hosts'
