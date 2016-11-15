@@ -70,7 +70,7 @@ golan_mount() {
 	fi;
 
 	mkdir "$volumePath";
-	sshfs "$(whoami)@golan.tu.c.bitbit.net:/nfs/home/$(whoami)" "$volumePath" "-oping_diskarb,volname=golan"
+	sshfs "$(whoami)@ssh.tu.c.bitbit.net:/nfs/home/$(whoami)" "$volumePath" "-oping_diskarb,volname=golan"
 }
 
 golan_unmount() {
