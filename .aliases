@@ -55,3 +55,7 @@ alias hulksmash="rm -fr"
 
 # Edit hosts file
 alias hosts='sudo $EDITOR /etc/hosts'
+
+# stuff
+alias pull='ssh hal -- pull'
+alias deploy='ssh hal -- deploy'
