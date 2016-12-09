@@ -10,3 +10,5 @@
 	default = simple
 [pull]
 	rebase = true
+[core]
+	excludesfile = ~/.files/.gitignore_global
