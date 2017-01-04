@@ -56,3 +56,9 @@ source $ZSH/oh-my-zsh.sh
 source ~/.files/.aliases
 source ~/.files/.exports
 source ~/.files/.functions
+
+if [ -f ~/adm/bash_completion.sh ]; then
+    autoload -U +X compinit && compinit
+    autoload -U +X bashcompinit && bashcompinit
+    source ~/adm/bash_completion.sh
+fi
