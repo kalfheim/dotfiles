@@ -17,50 +17,6 @@ function digga() {
 	dig +nocmd "$1" any +multiline +noall +answer;
 }
 
-# Wank stuff
-wank_mount() {
-	local volumePath="$HOME/creeper";
-
-	if [[ -e "$volumePath" ]]; then
-		echo "Probably already mounted.";
-		return 1;
-	fi;
-
-	mkdir "$volumePath";
-	sshfs "$(whoami)@wank.no:/nfs/home/$(whoami)" "$volumePath" "-oping_diskarb,volname=creeper"
-}
-
-wank_unmount() {
-	creeper_unmount;
-}
-
-# Creeper stuff
-creeper_mount() {
-	local volumePath="$HOME/creeper";
-
-	if [[ -e "$volumePath" ]]; then
-		echo "Probably already mounted.";
-		return 1;
-	fi;
-
-	mkdir "$volumePath";
-	sshfs "$(whoami)@creeper.no:/nfs/home/$(whoami)" "$volumePath" "-oping_diskarb,volname=creeper"
-}
-
-creeper_unmount() {
-	diskutil unmount "$HOME/creeper" && rmdir "$HOME/creeper";
-}
-
-# hal9000
-hal() {
-	ssh -A ssh.tu.c.bitbit.net
-}
-
-# golan
-golan() {
-	ssh -A golan.tu.c.bitbit.net
-}
-
 golan_mount() {
 	local volumePath="$HOME/golan";
 
@@ -83,9 +39,4 @@ retry() {
 	do
 		sleep 1;
 	done;
-}
-
-# A
-alpha() {
-	ssh -A 46.101.237.41
 }
