@@ -23,6 +23,11 @@ if [ ! -L ~/.gitconfig ]; then
 	ln -s ~/.files/.gitconfig ~/;
 fi;
 
+if [ ! -L ~/.config/psysh/config.php ]; then
+    echo "Symlink ~/.config/psysh/config.php -> ~/.files/psysh-config.php";
+    ln -s ~/.files/psysh-config.php ~/.config/psysh/config.php;
+fi;
+
 source ~/.zshrc;
 
 echo "Done.";
