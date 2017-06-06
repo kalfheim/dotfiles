@@ -38,3 +38,7 @@ if ($test->laravel) {
         }
     }
 }
+
+return [
+    'eraseDuplicates' => true,
+];
