@@ -37,6 +37,10 @@ if ($test->laravel) {
             //
         }
     }
+
+    DB::listen(function (Illuminate\Database\Events\QueryExecuted $query) {
+        printf("[%s] %s\n", $query->connectionName, $query->sql);
+    });
 }
 
 return [
