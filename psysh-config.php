@@ -1,18 +1,18 @@
 <?php
 
-$test = (object)[
+$is = (object)[
     'laravel' => file_exists(getcwd().'/artisan'),
     'composer' => file_exists(getcwd().'/composer.json'),
     'composerInstalled' => file_exists(getcwd().'/vendor/autoload.php'),
 ];
 
-if ($test->composer && ! $test->composerInstalled) {
+if ($is->composer && ! $is->composerInstalled) {
     return [
         'startupMessage' => '<warning>composer.json is detected, but has not been installed</warning>',
     ];
 }
 
-if ($test->laravel) {
+if ($is->laravel) {
     // Alias Eloquent models for easy access.
     // @see https://gist.github.com/calebporzio/cdf70bd390688646fda65490006eb0a6
 
@@ -38,6 +38,7 @@ if ($test->laravel) {
         }
     }
 
+    // Print SQL queries made by the query builder (including Eloquent)
     DB::listen(function (Illuminate\Database\Events\QueryExecuted $query) {
         printf("[%s] %s\n", $query->connectionName, $query->sql);
     });
