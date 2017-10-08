@@ -26,7 +26,7 @@ golan_mount() {
 	fi;
 
 	mkdir "$volumePath";
-	sshfs "$(whoami)@ssh.tu.c.bitbit.net:/nfs/home/$(whoami)" "$volumePath" -o volname=golan,auto_cache,reconnect,defer_permissions,noappledouble
+	sshfs "$(whoami)@ssh.tu.c.bitbit.net:/nfs/home/$(whoami)" "$volumePath" -o volname=golan -o auto_cache -o reconnect -o defer_permissions -o noappledouble
 }
 
 golan_unmount() {
