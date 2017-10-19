@@ -50,12 +50,12 @@ alias curl_resumable="curl -L -O -C - "
 # Composer alias
 alias c="composer"
 
-#
-alias hulksmash="rm -fr"
-
 # Edit hosts file
 alias hosts='sudo $EDITOR /etc/hosts'
 
 # stuff
 alias pull='ssh hal -- pull'
 alias deploy='ssh hal -- deploy'
+
+# Gimme that warning
+alias mv='mv -i'
