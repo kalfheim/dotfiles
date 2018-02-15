@@ -21,17 +21,13 @@ golan_mount() {
 	local volumePath="$HOME/golan";
 
 	if [[ -e "$volumePath" ]]; then
-		echo "Probably already mounted.";
-		return 1;
+		diskutil unmount "$HOME/golan";
+		rmdir "$HOME/golan";
 	fi;
 
-	mkdir "$volumePath";
-	sshfs "$(whoami)@ssh.tu.c.bitbit.net:/nfs/home/$(whoami)" "$volumePath" -o volname=golan -o auto_cache -o reconnect -o defer_permissions -o noappledouble
-}
-
-golan_unmount() {
-	diskutil unmount "$HOME/golan";
-	rmdir "$HOME/golan";
+	mkdir "$volumePath" && \
+	sshfs "$(whoami)@ssh.tu.c.bitbit.net:/nfs/home/$(whoami)" "$volumePath" -o volname=golan -o auto_cache -o reconnect -o defer_permissions -o noappledouble && \
+	echo "Mounted"
 }
 
 # Retry command until success
