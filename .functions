@@ -30,7 +30,8 @@ golan_mount() {
 }
 
 golan_unmount() {
-	diskutil unmount "$HOME/golan" && rmdir "$HOME/golan";
+	diskutil unmount "$HOME/golan";
+	rmdir "$HOME/golan";
 }
 
 # Retry command until success
