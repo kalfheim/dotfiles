@@ -17,7 +17,7 @@ function digga() {
 	dig +nocmd "$1" any +multiline +noall +answer;
 }
 
-golan_mount() {
+golan() {
 	local volumePath="$HOME/golan";
 
 	if [[ -e "$volumePath" ]]; then
