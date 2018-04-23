@@ -47,7 +47,7 @@ ZSH_THEME="taybalt"
 ZSH_CUSTOM=~/.files/oh-my-zsh-custom
 
 # Plugins
-plugins=(zsh-syntax-highlighting composer sublime z)
+plugins=(zsh-syntax-highlighting composer z)
 
 source $ZSH/oh-my-zsh.sh
 
