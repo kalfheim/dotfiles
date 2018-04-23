@@ -62,3 +62,6 @@ alias mv='mv -i'
 
 # a comment so that stuff remains properly grouped
 alias aether='vendor/bin/aether'
+
+# sublime text
+alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
