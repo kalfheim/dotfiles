@@ -62,7 +62,3 @@ if [ -f ~/adm/bash_completion.sh ]; then
     autoload -U +X bashcompinit && bashcompinit
     source ~/adm/bash_completion.sh
 fi
-
-if [ -f ~/.phpbrew/bashrc ]; then
-	source ~/.phpbrew/bashrc
-fi
