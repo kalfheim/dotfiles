@@ -1,7 +1,15 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-so ~/.files/vim/plugins.vim
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'itchyny/lightline.vim'
+
+call vundle#end()            " required
+filetype plugin indent on    " required
 
 set backspace=indent,eol,start
 let mapleader = "\<Space>"
@@ -19,6 +27,13 @@ colorscheme atom-dark-256
 set t_CO=256
 
 set colorcolumn=80
+
+" Wrap commit body at 72 characters
+autocmd FileType gitcommit setlocal colorcolumn=20
+
+set noshowmode
+
+set laststatus=2
 
 
 "--------------------Search--------------------
