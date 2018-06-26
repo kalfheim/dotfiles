@@ -18,6 +18,8 @@ set number
 colorscheme atom-dark-256
 set t_CO=256
 
+set colorcolumn=80
+
 
 "--------------------Search--------------------
 
