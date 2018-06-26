@@ -21,7 +21,6 @@ set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
 "--------------------Styling--------------------
 
 syntax enable
-set number
 
 colorscheme atom-dark-256
 set t_CO=256
