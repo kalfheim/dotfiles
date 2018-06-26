@@ -29,7 +29,7 @@ set t_CO=256
 set colorcolumn=80
 
 " Wrap commit body at 72 characters
-autocmd FileType gitcommit setlocal colorcolumn=20
+autocmd FileType gitcommit setlocal colorcolumn=72
 
 set noshowmode
 
