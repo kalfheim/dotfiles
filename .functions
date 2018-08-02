@@ -26,7 +26,7 @@ golan() {
 	fi;
 
 	mkdir "$volumePath" && \
-	sshfs "$(whoami)@ssh.tu.c.bitbit.net:/srv/home/$(whoami)" "$volumePath" -o volname=golan -o auto_cache -o reconnect -o defer_permissions -o noappledouble && \
+	sshfs "$(whoami)@golan:/srv/home/$(whoami)" "$volumePath" -o volname=golan -o auto_cache -o reconnect -o defer_permissions -o noappledouble && \
 	echo "Mounted"
 }
 
