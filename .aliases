@@ -65,3 +65,6 @@ alias aether='vendor/bin/aether'
 
 # sublime text
 alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
+
+# Shorter!
+alias watch='npm run watch'
