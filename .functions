@@ -17,19 +17,6 @@ function digga() {
 	dig +nocmd "$1" any +multiline +noall +answer;
 }
 
-golan() {
-	local volumePath="$HOME/golan";
-
-	if [[ -e "$volumePath" ]]; then
-		diskutil unmount "$HOME/golan";
-		rmdir "$HOME/golan";
-	fi;
-
-	mkdir "$volumePath" && \
-	sshfs "$(whoami)@golan:/srv/home/$(whoami)" "$volumePath" -o volname=golan -o auto_cache -o reconnect -o defer_permissions -o noappledouble && \
-	echo "Mounted"
-}
-
 # Retry command until success
 retry() {
 	until "$@";

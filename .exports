@@ -1,7 +1,6 @@
 # Paths
 export PATH="/usr/local/sbin:$PATH:$PATH"
 export PATH="$HOME/.files/bin:$PATH"
-export PATH="$HOME/adm/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
 
 # Make vim the default editor.
