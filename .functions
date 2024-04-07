@@ -24,3 +24,48 @@ retry() {
 		sleep 1;
 	done;
 }
+
+function xon() {
+	if mv /usr/local/etc/php/8.1/conf.d/xdebug.ini{.disabled,}; then
+		brew services restart php
+		echo "Xdebug extension is now switched on"
+	else
+		echo "Xdebug is already on "
+	fi;
+	echo "Enabling for current terminal session..."
+	xses restart
+}
+
+function xoff() {
+	if mv /usr/local/etc/php/8.1/conf.d/xdebug.ini{,.disabled}; then
+		brew services restart php
+		echo "Xdebug extension is now switched off"
+	else
+		echo "Xdebug is already off"
+	fi
+	echo "Disabling for current terminal session..."
+	xses off
+}
+
+function xses() {
+	if [ "$1" = "off" ]; then
+		unset XDEBUG_SESSION
+	elif [ "$1" != "status" ]; then
+		export XDEBUG_SESSION=1
+	fi
+
+	if [ "$XDEBUG_SESSION" = "1" ]; then
+		echo -e "Xdebug session: \e[32mEnabled\e[0m"
+	else
+		echo -e "Xdebug session: \e[31mDisabled\e[0m"
+	fi
+}
+
+# https://laravel-news.com/the-ultimate-git-nah-alias
+nah () {
+    git reset --hard
+    git clean -df
+    if [ -d ".git/rebase-apply" ] || [ -d ".git/rebase-merge" ]; then
+        git rebase --abort
+    fi
+}

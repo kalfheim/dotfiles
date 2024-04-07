@@ -21,9 +21,6 @@ alias sudo='sudo '
 # Get week number
 alias week='date +%V'
 
-# Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, comoser, and their installed packages
-alias update='sudo softwareupdate -i -a; brew update; brew upgrade --all; brew cleanup; sudo npm install npm -g; sudo npm update -g; sudo gem update --system; sudo gem update; composer self-update; composer global update; composer global dump-autoload --optimize'
-
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias localip="ipconfig getifaddr en0"
@@ -32,17 +29,8 @@ alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[
 # Canonical hex dump; some systems have this symlinked
 command -v hd > /dev/null || alias hd="hexdump -C"
 
-# Lock the screen (when going AFK)
-alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
-
-# Open in Chrome
-alias chrome="open -a \"Google Chrome\""
-
 # Laravel Artisan CLI
 alias a="php artisan"
-
-# Laravel Valet
-alias v="valet"
 
 # Useful for downloading big files
 alias curl_resumable="curl -L -O -C - "
@@ -53,15 +41,5 @@ alias c="composer"
 # Edit hosts file
 alias hosts='sudo $EDITOR /etc/hosts'
 
-# stuff
-alias pull='ssh hal -- pull'
-alias deploy='ssh hal -- deploy'
-
 # Gimme that warning
 alias mv='mv -i'
-
-# a comment so that stuff remains properly grouped
-alias aether='vendor/bin/aether'
-
-# sublime text
-alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'

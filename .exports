@@ -1,7 +1,8 @@
 # Paths
-export PATH="/usr/local/sbin:$PATH:$PATH"
-export PATH="$HOME/.files/bin:$PATH"
-export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/.files/bin:$HOME/.composer/vendor/bin:$PATH:/opt/homebrew/bin"
+
+# Docker
+export DOCKER_DEFAULT_PLATFORM=linux/amd64
 
 # Make vim the default editor.
 export EDITOR='vim';
@@ -16,6 +17,21 @@ export LESS_TERMCAP_md="${yellow}";
 # Don’t clear the screen after quitting a manual page.
 export MANPAGER='less -X';
 
-if [ -x ~/.exports.local ]; then
+if [ -f ~/.exports.local ]; then
 	source ~/.exports.local
 fi
+
+export GPG_TTY=$(tty)
+
+# Android Studio paths
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+# NVM
+export NVM_DIR="$HOME/.nvm"
+source /opt/homebrew/opt/nvm/nvm.sh
