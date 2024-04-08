@@ -1,6 +1,13 @@
 [user]
 	name = Kristoffer Alfheim
-	email = kristoffer.alfh@gmail.com
+	email = kristoffer.alfh@hey.com
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGFxFnW6ogTk20NTSaAGLMTU9P+UbO0jUDxAjEava/wV
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+[commit]
+	gpgsign = true
 [alias]
 	s = status
 	co = checkout
