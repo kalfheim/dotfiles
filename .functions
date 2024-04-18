@@ -48,7 +48,6 @@ function xses() {
 }
 
 confirm() {
-	# call with a prompt string or use a default, zsh compatible
 	read -q "REPLY?${1:-Are you sure? [y/N]} "
 	echo
 	case "${REPLY}" in
@@ -63,6 +62,7 @@ confirm() {
 
 # https://laravel-news.com/the-ultimate-git-nah-alias
 nah () {
+	git status --short
 	confirm || return 1
 	git reset --hard
     git clean -df
