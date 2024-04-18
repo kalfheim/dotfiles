@@ -61,9 +61,24 @@ function xses() {
 	fi
 }
 
+confirm() {
+	# call with a prompt string or use a default, zsh compatible
+	read -q "REPLY?${1:-Are you sure? [y/N]} "
+	echo
+	case "${REPLY}" in
+		[yY][eE][sS]|[yY])
+			return 0
+			;;
+		*)
+			return 1
+			;;
+	esac
+}
+
 # https://laravel-news.com/the-ultimate-git-nah-alias
 nah () {
-    git reset --hard
+	confirm || return 1
+	git reset --hard
     git clean -df
     if [ -d ".git/rebase-apply" ] || [ -d ".git/rebase-merge" ]; then
         git rebase --abort
