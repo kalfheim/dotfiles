@@ -47,7 +47,7 @@ ZSH_THEME="taybalt"
 ZSH_CUSTOM=~/.files/oh-my-zsh-custom
 
 # Plugins
-plugins=(zsh-syntax-highlighting composer z)
+plugins=(zsh-syntax-highlighting composer z nvm)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -59,10 +59,27 @@ source ~/.files/.functions
 
 autoload -U add-zsh-hook
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+autoload -U add-zsh-hook
+load-nvmrc() {
+  local node_version="$(nvm version)"
+  local nvmrc_path="$(nvm_find_nvmrc)"
+
+  if [ -n "$nvmrc_path" ]; then
+    local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
+
+    if [ "$nvmrc_node_version" = "N/A" ]; then
+      nvm install
+    elif [ "$nvmrc_node_version" != "$node_version" ]; then
+      nvm use
+    fi
+  fi
+}
+add-zsh-hook chpwd load-nvmrc
+load-nvmrc
 
 # Herd injected PHP 8.3 configuration.
 export HERD_PHP_83_INI_SCAN_DIR="/Users/kristoffer/Library/Application Support/Herd/config/php/83/"

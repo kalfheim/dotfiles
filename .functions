@@ -70,3 +70,12 @@ nah () {
         git rebase --abort
     fi
 }
+
+in() {
+    local dir="$1"
+    shift
+    (
+        cd "$dir" || return
+        "$@"
+    )
+}
